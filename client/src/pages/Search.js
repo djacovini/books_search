@@ -1,5 +1,5 @@
 import React from "react";
-import Container from "../components/Container";
+import SearchResults from "../components/SearchResults";
 import SearchForm from "../components/SearchForm";
 import API from "../utils/API"
 
@@ -27,10 +27,10 @@ class Search extends React.Component {
   }
 
   render(){
-    console.log(this.state.savedBooks);
     return(
       <div>
-        <Container savedBooks={this.state.savedBooks} path={this.props.match.path}/>
+        <SearchForm handleChange={this.handleChange} handleSearchClick={this.handleSearchClick}/>
+        <SearchResults bookData={this.state.bookData} path={this.props.match.path}/>
       </div>
     )  
   }
